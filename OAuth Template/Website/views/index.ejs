@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <!--Adds the nav from partials-->
+    <%- include('partials/nav') %>
+
+    <!--Adds the title from index.js-->
+    <h1><%= title %></h1>
+    <!--Addes Welcome with title from index.ejs-->
+    <p>Welcome to my <%= title %></p>
+  </body>
+</html>

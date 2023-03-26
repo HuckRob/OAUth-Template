@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <%- include('partials/nav') %>
+
+    <h1><%= title %></h1>
+    <p>Welcome to my <%= title %></p>
+    <% if(user){ %>
+    <div class="profileInfo">
+        <img src="<%= user.picture %>" alt="profile picture" />
+        <p class="name">
+            <%= user.nickname.charAt(0).toUpperCase() + user.nickname.slice(1) %>
+        </p>
+    </div>
+    <% } %>
+
+
+    <!--
+        pre tags keep the formatting of the text
+        JSON.stringify converts the object(user) to a string
+        null is the replacer
+        2 is the number of spaces to use as a spacer
+    -->
+    <pre><%= JSON.stringify(user,null,2)%></pre>
+
+    <!--This displays the info returned from the server-->
+    <pre>
+        <%= JSON.stringify(data,null,2)%>
+    </pre>
+  </body>
+</html>
